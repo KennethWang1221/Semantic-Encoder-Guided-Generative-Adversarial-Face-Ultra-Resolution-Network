@@ -9,7 +9,7 @@ Face super-resolution is a domain-specific single image super-resolution, which 
 
 
 
-![CVPR_overview_1](/Users/wangxiang/学习/计算机/LakeHeadU/CVPR_Paper/CVPR_overview_1.png)
+![CVPR_overview_1](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/CVPR_overview_1.png)
 
 Proposed SEGA-FURN and its components: Semantic Encoder $E$, Generator $G$, Joint Discriminator $D$ and Feature Extractor $\phi$. For $D$, ESLDSN represents the Embedded Semantics-Level Discriminative Sub-Net, ILDSN represents the Image-Level Discriminative Sub-Net, and FCM denotes Fully Connected Module. As for the generator $G$, there is three stages: Shallow Feature Module (SFM), Multi-level Residual Dense Module (MRDM), and Upsampling Module (UM). $I^{HR}$ and $I^{LR}$ denote HR face images and LR face images respectively. $I^{SR}$ is SR images from $G$. Furthermore, $E(\cdot)$ denotes the embedded semantics obtained from $E$. $D(\cdot)$ represents the output probability of $D$. $\phi(I^{HR})$ and $\phi(I^{SR})$ describes the features learned by $\phi$.
 
@@ -33,7 +33,7 @@ In this section, we present the proposed method SEGA-FURN in detail. First, we d
 
 
 
-![CVPR_arch_temp4](/Users/wangxiang/学习/计算机/LakeHeadU/CVPR_Paper/CVPR_arch_temp4.png)
+![CVPR_arch_temp4](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/CVPR_arch_temp4.png)
 
 Figure 2. **Red dotted rectangle**: The architecture of Generator. **Blue dotted rectangle**: The architecture of the Joint Discriminator. $F_{SF}$ denotes shallow features, $F_{MDBM}$ denotes the outputs of MDBM, $F_{GF}$ represents global features, and $F_{MHF}$ represents multiple hierarchical features. K, n, and s are the kernel size, number of filters and strides respectively. N is the number of neurons in dense layer.
 
@@ -79,7 +79,7 @@ As mentioned in Sec.1, the novel architecture RIDB is proposed for the generator
 
 
 
-![CVPR_RIDB_green_temp2](/Users/wangxiang/学习/计算机/LakeHeadU/CVPR_Paper/CVPR_RIDB_green_temp2.png)
+![CVPR_RIDB_green_temp2](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/CVPR_RIDB_green_temp2.png)
 
 Figure 3. **Top:** Dense Nested Block (DNB) consists of multiple RIDBs. **Bottom:** The proposed Residual in Internal Dense Block (RIDB).
 
@@ -164,7 +164,7 @@ We compare the proposed method with the state-of-the-art SR methods.
 
 The 4× and 8× qualitative results are depicted in Fig. 4. The top two rows show the 4× visual results. As for Bicubic interpolation, we observe that its results contain over-smooth visualization effects. SRGAN relatively enhances the SR results compared to Bicubic interpolation, but it still fails to generate fine details especially in facial components, such as eyes, and mouth. It is obvious that ESRGAN produces overly smoothed visual results and misses specific textures. On the contrary, the 4× SR images produced by our method retain facial-specific details and are faithful to HR counterparts.
 
-![CVPR_combine_4x8x](/Users/wangxiang/Code/Github_Repository/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/CVPR_combine_4x8x.png)
+![CVPR_combine_4x8x](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/CVPR_combine_4x8x.png)
 
 Figure 4. Qualitative comparison against state-of-the-art methods. **The top two rows**: the results of 4× upscaling factor from 32x32 pixels to 256x256 pixels. **The bottom two rows**: the results of 8× upsampling factor from 16x16 pixels to 256x256 pixels. From left to right: (a) HR images, (b) LR inputs, (c) Bicubic interpolation, (d) Results of SRGAN, (e) Results of ESRGAN, and (f) Our method.
 
@@ -174,7 +174,7 @@ To reveal the powerful super-resolution ability of our proposed method, we furth
 
 **Quantitative Comparison**
 
-![Table1](/Users/wangxiang/Code/Github_Repository/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/Table1.png)
+![Table1](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/Table1.png)
 
 Table 1. Quantitative comparison on CelebA dataset for upscaling factor 4x and 8x, in terms of average PSNR(dB) and SSIM. Numbers in bold are the best evaluation results among state-of-the-art methods.
 
@@ -184,19 +184,19 @@ The quantitative results with multiple ultra upscaling factors 4× and 8× are s
 
 we further implemented ablation studies to investigate the performance of the proposed method. As shown in Table 2, we list several variants based on different proposed components. First, among them, RIDB-Net can be used as the baseline variant, which only contains single component RIDB. Second, the RIDB-RaLS-Net is constructed by removing the Semantic Encoder (SE) from the SEGA-FURN. Next, RIDB-SE-Net means to remove RaLS loss of SEGA-FURN, and RIDB-SE-RaLS-Net equals to SEGA-FURN including all of the three components. In addition, we provide the visual results of these variants in Fig. 5, and quantitative comparison in Table 3.
 
-![CVPR_ablation_comb4x8x_3](/Users/wangxiang/Code/Github_Repository/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/CVPR_ablation_comb4x8x_3.png)
+![CVPR_ablation_comb4x8x_3](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/CVPR_ablation_comb4x8x_3.png)
 
 Figure 5. Qualitative comparison of ablation studies. **The top two rows:** the results of upscaling factor 4×. **The bottom two rows:** the results of upscaling factor 8×. From left to right: (a) HR images, (b) LR inputs, (c) Results of RIDB-Net, (d) Results of RIDB-RaLS-Net (e) Results of RIDB-SE-Net, and (f) Results of RIDB-SE-RaLS-Net (SEGA-FURN).
 
 
 
-![Table2](/Users/wangxiang/Code/Github_Repository/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/Table2.png)
+![Table2](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/Table2.png)
 
 ​			Table 2. Description of SEGA-FURN variants with different components in experiments.
 
 
 
-![Table4](/Users/wangxiang/Code/Github_Repository/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/Table4.png)
+![Table4](https://github.com/KennethXiang/Semantic-Encoder-Guided-Generative-Adversarial-Face-Ultra-Resolution-Network/blob/main/Table4.png)
 
 ​	Table 3. Quantitative comparison of different variants on CelebA dataset for upscaling factor 4x and 8x
 
