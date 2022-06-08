@@ -1,7 +1,9 @@
 # Semantic Encoder Guided Generative Adversarial Face Ultra-Resolution Network
  **The Repository of SEGA-FURN**
 
+**Import Disclaimer Note**
 
+This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
 
 ## Overview ##
 
